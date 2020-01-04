@@ -1,0 +1,40 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGCOB17.
+      **************************************
+      * AREA DE COMENTARIOS
+      * AUTHOR: GUSTAVO ANTUNES
+      * OBJETIVO: RECEBER UM NUMERO E CALCULAR A TABUADA DE 1 A 10
+      * UTILIZAR PERFORM - UNTIL
+      * DATA: 30/12/2019
+      *************************************
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+           COPY 'BOOK.cbl'.
+       PROCEDURE DIVISION.
+       0001-PRINCIPAL.
+           PERFORM 0100-INICIALIZAR.
+           IF WRK-VENDAS > 0
+               PERFORM 0200-PROCESSAR UNTIL WRK-VENDAS = 0
+
+           END-IF.
+           PERFORM 0300-FINALIZAR.
+           STOP RUN.
+
+       0100-INICIALIZAR.
+           ACCEPT WRK-VENDAS FROM CONSOLE.
+
+       0200-PROCESSAR.
+           ADD 1 TO WRK-QT.
+           ADD WRK-VENDAS TO WRK-ACUM.
+           PERFORM 0100-INICIALIZAR.
+
+
+       0300-FINALIZAR.
+           DISPLAY '-----------------------'.
+           DISPLAY 'ACUMULADO DE ' WRK-ACUM ' VENDAS'.
+           DISPLAY 'QUANTIDADE DE VENDAS ' WRK-QT.
+           DISPLAY 'FIM DE PROCESSAMENTO'.

@@ -1,0 +1,25 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGCOB02.
+      **************************************
+      * AREA DE COMENTARIOS
+      * AUTHOR: GUSTAVO ANTUNES
+      * OBJETIVO: RECEBER E IMPRIMIR UMA STRING A PARTIR DE UMA VARIAVEL
+      * DATA: 27/12/2019
+      *************************************
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+      *VARIAVEL DE NIVEL 77 E UMA VARIAVEL PUBLICA QUE PODE SER UTLIZADA
+      *EM TODO O PROGRAMA COBOL
+      *PICTURE OU PIC TEM COMO FINALIDADE IDENTIFICAR O TIPO DA VARIAVEL
+      *TIPO A -> DEFINE COMO TIPO ALFABETICO
+      *TIPO X -> ALFANUMERICO NUMEROS, LETRAS E SIMBOLOS
+      *TIPO 9 -> VARIAVEIS NUMERICAS
+      *PIC XXX EQUIVALE A PIC X(3)
+       77 WRK-NOME PIC X(20) VALUE SPACES.
+       PROCEDURE DIVISION.
+           ACCEPT WRK-NOME FROM CONSOLE.
+      *E possivel imprimir uma parte da variavel da seguinte maneira
+      *DISPLAY WRK-NOME(1:10) Ira imprimir da primeira até a decima
+           DISPLAY 'Nome.. ' WRK-NOME.
+           STOP RUN.
